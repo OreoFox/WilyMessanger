@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{names}}</title>
+</head>
+<body>
+<div class="body">
+  <p class="name">{{names}}</p>
+  <div class="info">
+    <div class="flex">
+      <img src={{ico}} alt="Ico" class="authorico">
+      <p class="authorname">{{author}}</p>
+    </div>
+    <p>{{descs}}</p>
+  </div>
+  {{#each entrys}}
+    <hr>
+    <a href="next/{{this.name}}"><div class="entry">
+      <div class="entryinfo">
+        <p class="entryname">{{this.name}}</p>
+        <p class="entrydesc">{{this.desc}}</p>
+      </div>
+    </div></a>
+  {{/each}}
+  </a>
+  <hr>
+  <a href="/theme/createentry/{{names}}">
+    <div class="addTheme">
+      <img src="https://i.imgur.com/CPNxvyr.png" alt="add" class="plus">
+    </div>
+  </a>
+</div>
+</div>  
+</body>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: #1D201F;
+  font-family: PT Sans;
+}
+
+a {
+  text-decoration: none;
+  color: #E8E9ED;
+  transition: 200ms;
+  margin-left: 2%;
+}
+
+.body {
+  margin: 2% 0 0 2%;
+  color: #E8E9ED;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.authorico {
+  width: 5%;
+  border-radius: 50%;
+}
+
+.authorname {
+  margin-left: 2%;
+  font-size: 120%;
+}
+
+.info {
+  text-align: center;
+}
+
+.name {
+  text-align: center;
+  margin: 2%;
+  font-size: 150%;
+}
+
+.entry {
+  background-color: #E8E9ED;
+  color: #0B132B;
+  width: 80%;
+  margin: 0 auto;
+  transition: 200ms;
+  margin-bottom: 3%;
+}
+
+.entry:hover {
+  width: 90%;
+}
+
+.entryinfo {
+  margin: 1%;
+}
+
+.entryname {
+  font-size: 120%;
+}
+
+.addTheme {
+  text-align: center;
+  margin: 2%;
+}
+
+.plus {
+  width: 3%;
+  transition: 200ms;
+  margin: 0 auto;
+}
+
+.plus:hover {
+  width: 5%;
+}
+</style>
+</html>

@@ -1,0 +1,83 @@
+<html>
+<head>
+<title>Regestartion</title>
+</head>
+<body>
+<div class="container">
+    <p class="title">Создание темы</p>
+    <div class="form">
+    <form method="post" action="/createtheme">
+        <p><input class="name style" type="text" name="name" id="usrname" placeholder="Название"></p>
+        <p><input class="passwd style" type="text" name="ico" id="pswd" placeholder="Иконка"></p>
+        <p><textarea class="passwd style" type="desc" name="descr" id="desc" placeholder="Описание"></textarea></p>
+        <p><input type="submit" value="Создать" name="submit" class="button" onclick="submited()"></p>
+    </form>
+    </div>
+</div>
+</body>
+<style>
+body {
+  background: #1D201F;
+  margin: 0;
+  padding: 0;
+  font-family: PT Sans;
+}
+
+.container {
+  color: #E8E9ED;
+  margin: 0 auto;
+  margin-top: 2%;
+  padding: 0;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  conten-align: center;
+  text-align:center;
+  width: 40%;
+}
+
+.container .title{
+  text-align: center;
+  font-size: 130%;
+}
+
+.container .form{
+  width: 100%;
+  text-align: center;
+  margin: 1%;
+}
+
+.style {
+  width: 100%;
+  margin: 0.5%;
+  padding: 10px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  border: 2px solid #6E7E85;
+  border-radius: 4px;
+  background-color: #E8E9ED;
+  resize: none;
+  transition: 250ms;
+}
+
+.name {
+}
+
+.button {
+  background-color: #F37748;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  margin-top: 2.5%;
+  cursor: pointer;
+}
+
+.style:hover {
+  border: 2px solid #0B132B;
+}
+</style>
+</html>

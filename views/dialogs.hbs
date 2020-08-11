@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="nav">
+  <nav class="navbar">
+      <a href="/" class="item">Dialogs</a>
+      <a href="/profile" class="item">Profile</a>
+      <a href="/friends" class="item">Friends</a>
+      <a href="/search" class="item">Find</a>
+  </nav>
+</div>
+<div class="body">
+  <div class="dialogs">
+        {{#each dialogs}}
+            <a href="/messages/{{this.username}}/">
+                <div class="dialog">
+                    <img src={{this.avatar}} alt="" class="ico">
+                    <p class="name">{{this.username}}</p>
+                </div>
+            </a>
+        {{/each}}
+  </div>  
+</div>
+</body>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: #1D201F;
+  font-family: PT Sans;
+}
+
+.body {
+  margin: 2% 0 0 2%;
+  color: #E8E9ED;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #1D201F;
+  font-family: PT Sans;
+}
+
+.List {
+  color: #E8E9ED;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #E8E9ED;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 2%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 5%;
+}
+
+.item {
+  font-size: 120%;
+  transition: 200ms;
+  color: #E8E9ED;
+}
+
+.item:hover {
+  font-size: 150%;
+}
+
+.dialogs {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #1D201F;
+  padding: 1%;
+}
+
+.dialog {
+  padding: 0.5%;
+  margin: 0.5%;
+  width: 40%;
+  display: flex;
+  justify-conten: center;
+  align-items: center;
+  background: #E8E9ED;
+  transition: 200ms;
+}
+
+.dialog:hover {
+  padding: 0.5%;
+  width: 46%;
+  display: flex;
+}
+
+.ico {
+  width: 15%;
+  border-radius: 50%;
+}
+
+.name {
+  margin-left: 2%;
+  font-size: 150%;
+}
+
+a {
+  text-decoration: none;
+  color: #1D201F;
+}
+</style>
+</html>

@@ -1,0 +1,166 @@
+<html>
+  <head>
+    <title>CF</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="body">
+        <div class="reg">
+            <div class="bio">
+                <a href="/profile">{{authorusername}}</a>
+                <img src={{avatar}} alt="ico" class="miniico">
+                <a href="/exit">Выйти</a>
+            </div>
+        </div>
+        <div class="inform">
+            <img src="https://miro.medium.com/max/9856/1*ZoOlQLNrOW2729miRvO1sw.jpeg" alt="fox">
+            <p><a href="/themes">ТЕМЫ</a></p>
+        </div>
+        <div class="sendmessage">
+            <form method="POST" action="/send_message">
+                <p><input class="style" type="text" name="message" id="usrname" placeholder="MESSAGE"></p>
+                <p><input type="submit" value="Отправить" name="submit" class="button" onclick="submited()"></p>
+            </form>
+        </div>
+        <div class="messages">
+            {{#each messages}}
+                <div class="message">
+                    <p class="username">
+                        <div class="msginfo">
+                            <img src={{this.avatar}} alt="ico" class="msgico">
+                            {{this.username}}
+                            ∙
+                            {{this.time}}
+                        </div>
+                    </p>
+                    <p class="messagecontent">{{this.content}}</p>
+                    <form method="POST" action="/commdelete">
+                        <input type="text" name="msgauthor" style="display: none;" value={{this.username}}>
+                        <input type="text" name="msgid" style="display: none;" value={{this.id}}>
+                        <input type="submit" value="Удалить" class="button">
+                    </form>
+                    <hr color="#0B132B" width="25%" align="left">
+                </div>
+            {{/each}}
+        </div>
+      </div>
+    </div>
+  </body>
+  <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #1D201F;
+            font-family: PT Sans;
+        }
+
+        .body {
+            margin: 2% 0 0 2%;
+            color: #E8E9ED;
+        }
+
+        .message .username .msginfo{
+          font-size: 110%;
+          color: #6E7E85;
+        }
+
+        .message .messagecontent{
+          font-size: 130%;  
+        }
+
+        .msginfo {
+            display: flex;
+            align-items: center;
+        }
+
+        .msgico {
+            width: 5vmin;
+            max-width: 5vmin;
+            min-width: 5vmin;
+            border-radius: 50%;
+            margin-right: 1%;
+        }
+
+        .style {
+            width: 50%;
+            margin: 0.5%;
+            padding: 10px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            border: 2px solid #6E7E85;
+            border-radius: 4px;
+            background-color: #E8E9ED;
+            resize: none;
+            transition: 250ms;
+        }
+
+        .button {
+            background-color: #F37748;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1rem;
+            margin-top: 1%;
+            cursor: pointer;
+        }
+
+        .sendmessage {
+            text-align: center;
+            align-items: center;
+        }
+
+        .miniico {
+            max-width: 10vmin;
+            min-width: 10vmin;
+            width: 10vmin;
+            border-radius: 50%;
+            margin-left: 2%;
+        }
+
+        .bio {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2%;
+        }
+
+        a {
+            text-decoration: none;
+            color: #E8E9ED;
+            transition: 200ms;
+            margin-left: 2%;
+        }
+
+        .reg {
+            text-align: center;
+            width: 100%;
+            font-size: 120%;
+            transition: 200ms;
+        }
+
+        .reg a:hover {
+            font-size: 125%;
+        }
+
+        .inform img {
+            width: 25%;
+            border-radius: 5%;
+            transition: 200ms;
+        }
+
+        .inform img:hover {
+            width: 25%;
+            border-radius: 15%;
+        }
+
+        .inform {
+            margin: 2%;
+            text-align: center;
+            align-content: center;
+            align-items: center;
+        }
+  </style>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find</title>
+</head>
+<div class="nav">
+  <nav class="navbar">
+      <a href="/" class="item">Dialogs</a>
+      <a href="/profile" class="item">Profile</a>
+      <a href="/friends" class="item">Friends</a>
+      <a href="/search" class="item">Find</a>
+  </nav>
+</div>
+<body>
+    <form method="POST" action="/search_user/" class="form">
+    <input type="text" class="style" name="person">
+    <input type="submit" class="button" value="Найти">
+    </form>
+    <div class="persons">
+        {{#each persons}}
+            <a href="/profile/{{this.username}}/">
+                <div class="person">
+                    <img src={{this.avatar}} alt="" class="icon">
+                    <p class="bio">{{this.username}}</p>
+                </div>
+            </a>
+        {{/each}}
+    </div>
+</body>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: #1D201F;
+  font-family: PT Sans;
+}
+
+a {
+  text-decoration: none;
+  color: #E8E9ED;
+}
+
+.form {
+    margin: 2%;
+    text-align: center;
+    background: #1D201F;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #1D201F;
+  font-family: PT Sans;
+}
+
+a {
+  text-decoration: none;
+  color: #E8E9ED;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 2%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 5%;
+}
+
+.item {
+  font-size: 120%;
+  transition: 200ms;
+}
+
+.item:hover {
+  font-size: 150%;
+}
+
+.button {
+  background-color: #F37748;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.style {
+  width: 80%;
+  padding: 10px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  border: 2px solid #6E7E85;
+  border-radius: 4px;
+  background-color: #E8E9ED;
+  resize: none;
+  transition: 250ms;
+}
+
+.person {
+  padding: 0.5%;
+  margin: 0.5%;
+  display: flex;
+  align-items: center;
+  transition: 200ms;
+  width: 80%;
+}
+
+.bio {
+  margin-left: 0.5%;
+}
+
+.icon {
+  width: 5%;
+  border-radius: 50%;
+}
+</style>
+</html>

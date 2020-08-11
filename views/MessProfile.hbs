@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+<body>
+<div class="nav">
+  <nav class="navbar">
+      <a href="/" class="item">Dialogs</a>
+      <a href="/profile" class="item">Profile</a>
+      <a href="/friends" class="item">Friends</a>
+      <a href="/search" class="item">Find</a>
+  </nav>
+</div>
+    <div class="body">
+      <div class="info">
+        <p><h1>{{username}}</h1></p>
+        <div>
+          <img src={{avatar}} alt="ICO" class="usericon">
+          <p>
+            <a href="/reico" class="reico">Изменить</a>
+          </p>
+         </div>
+      </div>
+    </div>
+    <div class="back">
+      <div class="svg">
+        <a href="/">
+          <?xml version="1.0" encoding="iso-8859-1"?>
+          <svg class="svgs" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            width="451.847px" height="451.847px" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 451.847 451.847;"
+            xml:space="preserve">
+          <g>
+            <path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,151.157c-12.359-12.359-12.359-32.397,0-44.751
+              c12.354-12.354,32.388-12.354,44.748,0l171.905,171.915l171.906-171.909c12.359-12.354,32.391-12.354,44.744,0
+              c12.365,12.354,12.365,32.392,0,44.751L248.292,345.449C242.115,351.621,234.018,354.706,225.923,354.706z"/>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          </svg>
+        </a>
+      </div>
+    </div>
+</body>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: #1D201F;
+  font-family: PT Sans;
+}
+
+a {
+  text-decoration: none;
+  color: #E8E9ED;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #1D201F;
+  font-family: PT Sans;
+}
+
+.List {
+  color: #E8E9ED;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #E8E9ED;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 2%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 5%;
+}
+
+.item {
+  font-size: 120%;
+  transition: 200ms;
+}
+
+.item:hover {
+  font-size: 150%;
+}
+
+.svgs {
+  position: fixed;
+  width: 5%;
+  bottom: -10%;
+  left: 90%;
+  transition: 200ms;
+}
+
+.svgs:hover {
+  transform: rotate(90deg);
+}
+
+.body {
+  margin: 2% 0 0 2%;
+  color: #E8E9ED;
+}
+
+.info {
+  text-align: center;
+  align-items: center;
+}
+
+.reico {
+  background-color: #0B132B;
+  padding: 0.5%;
+  border-radius: 2%;
+}
+
+.usericon {
+  border-radius: 50%;
+  max-width: 30vmin;
+  max-height: 30vmin;
+}
+</style>
+</html>

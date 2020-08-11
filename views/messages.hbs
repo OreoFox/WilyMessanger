@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="nav">
+  <nav class="navbar">
+      <a href="/" class="item">Dialogs</a>
+      <a href="/profile">Profile</a>
+      <a href="/friends">Friends</a>
+      <a href="/search">Find</a>
+  </nav>
+</div>
+<div class="body">
+  <div class="messages">
+    {{#each messages}}
+        <div class="message">
+            <div class="flex">
+            <img src={{this.avatar}} alt="" class="ico">
+            <p class="name">{{this.username}}</p>
+            </div>
+            <p class="content">{{this.content}}</p>
+        </div>
+    {{/each}}
+  </div>
+  <a name="bottom"></a>
+  <a href="#bottom">Вниз</a>
+  <form action="/send_message" method="POST" class="form">
+    <textarea type="text" class="style" name="content" row=10 cols=1000 name="content" required="true"></textarea>
+    <input type="text" value={{who}} name="who" style="display: none;">
+    <input type="text" name="from" value={{from}} style="display: none;">
+    <p><input type="submit" value="Отправить" class="button"></p>
+  </form>
+</div>
+</body>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: #1D201F;
+  font-family: PT Sans;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #1D201F;
+  font-family: PT Sans;
+}
+
+.List {
+  color: #E8E9ED;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #E8E9ED;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 2%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 5%;
+}
+
+.item {
+  font-size: 120%;
+  transition: 200ms;
+}
+
+.item:hover {
+  font-size: 150%;
+}
+
+.body {
+  margin: 2% 0 0 2%;
+  color: #E8E9ED;
+}
+
+.messages {
+  width: 100%;
+  display: block;
+  margin-bottom: 10%;
+}
+
+.message {
+  background: #E8E9ED;
+  width: 40%;
+  color: #1D201F;
+}
+
+.flex {
+  padding: 0.5%;
+  margin: 0.5%;
+  display: flex;
+  align-items: center;
+  transition: 200ms;
+}
+
+.ico {
+  width: 15%;
+  border-radius: 50%;
+}
+
+.name {
+  margin-left: 2%;
+  font-size: 150%;
+}
+
+.button {
+  background-color: #F37748;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.style {
+  width: 80%;
+  padding: 10px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  border: 2px solid #6E7E85;
+  border-radius: 4px;
+  background-color: #E8E9ED;
+  resize: none;
+  transition: 250ms;
+}
+
+.style:hover {
+  border: 2px solid #0B132B;
+}
+
+.form {
+  position: fixed;
+  bottom: 0;
+  background: #1D201F;
+}
+</style>
+</html>

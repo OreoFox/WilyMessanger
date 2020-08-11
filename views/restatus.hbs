@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reico</title>
+</head>
+<body>
+    <div class="main">
+        <div>
+            <p><h1>Изменить статус</h1></p>
+            <img class="usericon" src={{avatar}} alt="ico">
+        </div>
+        <div>
+            <form method="POST" action="/restatus">
+                <input class="style" type="text" placeholder="STATUS" name="newstat">
+                <p><input type="submit" value="Изменить" name="submit" class="button"></p>
+            </form>
+        </div>
+    </div>
+</body>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: #1D201F;
+  font-family: PT Sans;
+}
+
+.main {
+    text-align: center;
+    color: #E8E9ED;
+}
+
+a {
+  text-decoration: none;
+  color: #E8E9ED;
+}
+
+.style {
+    width: 30vmin;
+    margin: 0.5%;
+    padding: 10px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    border: 2px solid #6E7E85;
+    border-radius: 4px;
+    background-color: #E8E9ED;
+    resize: none;
+    transition: 250ms;
+}
+
+.usericon {
+  border-radius: 50%;
+  max-width: 30vmin;
+  max-height: 30vmin;
+}
+.button {
+      background-color: #F37748;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 1rem;
+      margin-top: 2.5%;
+      cursor: pointer;
+}
+
+.style:hover {
+      border: 2px solid #0B132B;
+}
+</style>
+</html>

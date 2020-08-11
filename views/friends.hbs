@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="nav">
+        <nav class="navbar">
+            <a href="/" class="item">Dialogs</a>
+            <a href="/profile" class="item">Profile</a>
+            <a href="/friends" class="item">Friends</a>
+            <a href="/search" class="item">Find</a>
+        </nav>
+    </div>
+    <div class="persons">
+        {{#each persons}}
+            <a href="/profile/{{this.username}}/">
+                <div class="person">
+                    <img src={{this.avatar}} alt="" class="icon">
+                    <p class="bio">{{this.username}}</p>
+                </div>
+            </a>
+        {{/each}}
+    </div>
+</body>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: #1D201F;
+  font-family: PT Sans;
+}
+
+a {
+  text-decoration: none;
+  color: #E8E9ED;
+}
+
+.person {
+  padding: 0.5%;
+  margin: 0.5%;
+  display: flex;
+  align-items: center;
+  transition: 200ms;
+  width: 80%;
+}
+
+.bio {
+  margin-left: 0.5%;
+}
+
+.icon {
+  width: 5%;
+  border-radius: 50%;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 2%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 5%;
+}
+
+.item {
+  font-size: 120%;
+  transition: 200ms;
+}
+
+.item:hover {
+  font-size: 150%;
+}
+</style>
+</html>

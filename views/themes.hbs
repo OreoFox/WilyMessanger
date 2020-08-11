@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="body">
+    <div class="themes">
+    {{#each themes}}
+        <a href="/theme/spec/{{this.name}}/"><div class="theme">
+            <div class="flex">
+            <div class="info">
+                <img src={{this.icon}} alt="Ico" class="themeico">
+                <p class="name">{{this.name}}</p>
+            </div>
+            <p class="desc">{{this.desc}}</p>
+            <p class="author">{{this.author}}</p>
+            </div>
+        </div></a>
+    {{/each}}
+    </div>
+</div>
+<a href="/createtheme">
+  <div class="addTheme">
+    <img src="https://i.imgur.com/CPNxvyr.png" alt="add" class="plus">
+  </div>
+</a>
+</body>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: #1D201F;
+  font-family: PT Sans;
+}
+
+a {
+  text-decoration: none;
+  color: #E8E9ED;
+  transition: 200ms;
+  margin-left: 2%;
+}
+
+.body {
+  margin: 2% 0 0 2%;
+  color: #E8E9ED;
+}
+
+.themes {
+  text-align: center;
+  width: 100%;
+}
+
+.theme {
+  background-color: #E8E9ED;
+  color: #0B132B;
+  width: 80%;
+  margin: 0 auto;
+  transition: 200ms;
+}
+
+.theme:hover {
+  width: 90%;
+}
+
+.info {
+  text-align: left;
+  margin: 2%;
+  display: flex;
+  align-items: center;
+}
+
+.themeico {
+  border-radius: 50%;
+  width: 5%;
+  margin-top: 1%;
+}
+
+.flex .desc{
+  text-align: left;
+  margin: 2%;
+}
+
+.flex .author{
+  text-align: right;
+  margin: 2%;
+}
+
+.name {
+  margin-left: 2%;
+  margin-top: 3%;
+  font-size: 150%;
+}
+
+.addTheme {
+  text-align: center;
+  margin: 2%;
+}
+
+.plus {
+  width: 5%;
+  transition: 200ms;
+  margin: 0 auto;
+}
+
+.plus:hover {
+  width: 7%;
+}
+</style>
+</html>

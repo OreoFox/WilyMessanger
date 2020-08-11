@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <title>Regestartion</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style/main.css">
+    <script src="validation.js"></script>
+    <script src="cookie.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <p class="title">Регистрация</p>
+      <div class="form">
+        <form method="post" action="/reg">
+          <p><input class="name style" type="text" name="username" id="usrname" placeholder="USERNAME"></p>
+          <p><input class="passwd style" type="password" name="passwd" id="pswd" placeholder="PASSWORD"></p>
+          <p><input type="submit" value="Регистрация" name="submit" class="button" onclick="submited()"></p>
+        </form>
+      </div>
+    </div>
+  </body>
+  <style>
+    body {
+      background: #1D201F;
+      margin: 0;
+      padding: 0;
+      font-family: PT Sans;
+    }
+
+    .container {
+      color: #E8E9ED;
+      margin: 0 auto;
+      margin-top: 2%;
+      padding: 0;
+      left: 50%;
+      display: flex;
+      flex-direction: column;
+      text-align:center;
+      width: 40%;
+    }
+
+    .container .title{
+      text-align: center;
+      font-size: 130%;
+    }
+
+    .container .form{
+      width: 100%;
+      text-align: center;
+      margin: 1%;
+    }
+
+    .style {
+      width: 100%;
+      margin: 0.5%;
+      padding: 10px;
+      font-size: 1rem;
+      box-sizing: border-box;
+      border: 2px solid #6E7E85;
+      border-radius: 4px;
+      background-color: #E8E9ED;
+      resize: none;
+      transition: 250ms;
+    }
+
+    .button {
+      background-color: #F37748;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 1rem;
+      margin-top: 2.5%;
+      cursor: pointer;
+    }
+
+    .style:hover {
+      border: 2px solid #0B132B;
+    }
+  </style>
+  <script>
+    function createCookie(username, passwd) {
+      document.cookie(`username=${username},passwd=${passwd}`);
+      console.log(document.cookie);
+    }
+  </script>
+</html>
