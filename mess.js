@@ -18,7 +18,16 @@ app.get('/', urlencodedParser, (req, res) => {
         let sql1 = db.prepare('SELECT password FROM users WHERE username = ?');
         passworddb = sql1.get(username).password;
     } catch(e) {
-        console.log(e)
+        res.sendFile(__dirname + '/registration.html');
+        return;
+    }
+
+    if(username == '') {
+        res.sendFile(__dirname + '/registration.html');
+        return;
+    } else if(String(username).length < 5) {
+        res.sendFile(__dirname + '/registration.html');
+        return;
     }
 
     if(String(passworddb) == String(password)) {
